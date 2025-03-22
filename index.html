@@ -127,66 +127,189 @@
           <h2 class="glitch-effect" data-text="SERVIÇOS">SERVIÇOS</h2>
           <div class="section-line"></div>
         </div>
+
+        <div class="servicos-intro">
+          <p>
+            Nossa equipe de técnicos certificados oferece soluções completas
+            para todos os dispositivos Apple, com garantia de satisfação.
+          </p>
+        </div>
+
+        <div class="servicos-tabs">
+          <button class="tab-button active" data-service="assistencia">
+            Assistência Técnica
+          </button>
+          <button class="tab-button" data-service="transferencia">
+            Transferência de Dados
+          </button>
+          <button class="tab-button" data-service="compra">
+            Compra de Usados
+          </button>
+          <button class="tab-button" data-service="desbloqueio">
+            Desbloqueio
+          </button>
+        </div>
+
         <div class="servicos-container">
-          <div class="servico-card">
-            <div class="servico-icon">
-              <i class="fas fa-tools"></i>
+          <div class="servico-card active" data-service="assistencia">
+            <div class="servico-content">
+              <div class="servico-icon-wrapper">
+                <div class="servico-icon">
+                  <i class="fas fa-tools"></i>
+                </div>
+                <div class="icon-pulse"></div>
+              </div>
+              <h3>Assistência Técnica</h3>
+              <div class="servico-details">
+                <p>
+                  Reparos especializados em todos os dispositivos Apple:
+                  iPhones, MacBooks, iPads e Apple Watch.
+                </p>
+                <ul class="servico-features">
+                  <li><i class="fas fa-check"></i> Diagnóstico gratuito</li>
+                  <li><i class="fas fa-check"></i> Troca de peças originais</li>
+                  <li><i class="fas fa-check"></i> Garantia nos serviços</li>
+                  <li><i class="fas fa-check"></i> Atendimento rápido</li>
+                </ul>
+              </div>
+              <div class="servico-devices">
+                <span><i class="fas fa-mobile-alt"></i></span>
+                <span><i class="fas fa-laptop"></i></span>
+                <span><i class="fas fa-tablet-alt"></i></span>
+                <span><i class="fas fa-desktop"></i></span>
+              </div>
+              <a
+                href="https://api.whatsapp.com/send?1=pt_BR&phone=5511987609959&text=Olá,%20gostaria%20de%20informações%20sobre%20assistência%20técnica"
+                class="servico-cta"
+              >
+                <span>Solicitar Reparo</span>
+                <i class="fas fa-arrow-right"></i>
+              </a>
             </div>
-            <h3>Assistência Técnica</h3>
-            <p>
-              Reparos especializados em todos os dispositivos Apple: iPhones,
-              MacBooks, iPads e Apple Watch.
-            </p>
-            <a
-              href="https://api.whatsapp.com/send?1=pt_BR&phone=5511987609959&text=Olá,%20gostaria%20de%20informações%20sobre%20assistência%20técnica"
-              class="servico-cta"
-              >Solicitar Reparo</a
-            >
+            <div class="card-bg"></div>
           </div>
-          <div class="servico-card">
-            <div class="servico-icon">
-              <i class="fas fa-exchange-alt"></i>
+
+          <div class="servico-card" data-service="transferencia">
+            <div class="servico-content">
+              <div class="servico-icon-wrapper">
+                <div class="servico-icon">
+                  <i class="fas fa-exchange-alt"></i>
+                </div>
+                <div class="icon-pulse"></div>
+              </div>
+              <h3>Transferência de Dados</h3>
+              <div class="servico-details">
+                <p>
+                  Transferimos seus dados de forma segura entre dispositivos,
+                  garantindo que nenhuma informação se perca.
+                </p>
+                <ul class="servico-features">
+                  <li><i class="fas fa-check"></i> Segurança total</li>
+                  <li><i class="fas fa-check"></i> Backup incluso</li>
+                  <li>
+                    <i class="fas fa-check"></i> Migração de apps e
+                    configurações
+                  </li>
+                  <li>
+                    <i class="fas fa-check"></i> Suporte pós-transferência
+                  </li>
+                </ul>
+              </div>
+              <div class="servico-devices">
+                <span><i class="fas fa-mobile-alt"></i></span>
+                <span><i class="fas fa-laptop"></i></span>
+                <span><i class="fas fa-tablet-alt"></i></span>
+                <span><i class="fas fa-cloud"></i></span>
+              </div>
+              <a
+                href="https://api.whatsapp.com/send?1=pt_BR&phone=5511987609959&text=Olá,%20gostaria%20de%20informações%20sobre%20transferência%20de%20dados"
+                class="servico-cta"
+              >
+                <span>Solicitar Serviço</span>
+                <i class="fas fa-arrow-right"></i>
+              </a>
             </div>
-            <h3>Transferência de Dados</h3>
-            <p>
-              Transferimos seus dados de forma segura entre dispositivos,
-              garantindo que nenhuma informação se perca.
-            </p>
-            <a
-              href="https://api.whatsapp.com/send?1=pt_BR&phone=5511987609959&text=Olá,%20gostaria%20de%20informações%20sobre%20transferência%20de%20dados"
-              class="servico-cta"
-              >Solicitar Serviço</a
-            >
+            <div class="card-bg"></div>
           </div>
-          <div class="servico-card">
-            <div class="servico-icon">
-              <i class="fas fa-mobile-alt"></i>
+
+          <div class="servico-card" data-service="compra">
+            <div class="servico-content">
+              <div class="servico-icon-wrapper">
+                <div class="servico-icon">
+                  <i class="fas fa-mobile-alt"></i>
+                </div>
+                <div class="icon-pulse"></div>
+              </div>
+              <h3>Compra de Usados</h3>
+              <div class="servico-details">
+                <p>
+                  Compramos seu dispositivo Apple usado por um preço justo. Faça
+                  uma avaliação gratuita.
+                </p>
+                <ul class="servico-features">
+                  <li><i class="fas fa-check"></i> Avaliação transparente</li>
+                  <li><i class="fas fa-check"></i> Melhor valor do mercado</li>
+                  <li><i class="fas fa-check"></i> Pagamento imediato</li>
+                  <li>
+                    <i class="fas fa-check"></i> Aceitamos aparelhos com defeito
+                  </li>
+                </ul>
+              </div>
+              <div class="servico-devices">
+                <span><i class="fas fa-mobile-alt"></i></span>
+                <span><i class="fas fa-laptop"></i></span>
+                <span><i class="fas fa-tablet-alt"></i></span>
+                <span><i class="fas fa-headphones"></i></span>
+              </div>
+              <a
+                href="https://api.whatsapp.com/send?1=pt_BR&phone=5511987609959&text=Olá,%20gostaria%20de%20vender%20meu%20dispositivo%20Apple"
+                class="servico-cta"
+              >
+                <span>Vender Dispositivo</span>
+                <i class="fas fa-arrow-right"></i>
+              </a>
             </div>
-            <h3>Compra de Usados</h3>
-            <p>
-              Compramos seu dispositivo Apple usado por um preço justo. Faça uma
-              avaliação gratuita.
-            </p>
-            <a
-              href="https://api.whatsapp.com/send?1=pt_BR&phone=5511987609959&text=Olá,%20gostaria%20de%20vender%20meu%20dispositivo%20Apple"
-              class="servico-cta"
-              >Vender Dispositivo</a
-            >
+            <div class="card-bg"></div>
           </div>
-          <div class="servico-card">
-            <div class="servico-icon">
-              <i class="fas fa-shield-alt"></i>
+
+          <div class="servico-card" data-service="desbloqueio">
+            <div class="servico-content">
+              <div class="servico-icon-wrapper">
+                <div class="servico-icon">
+                  <i class="fas fa-shield-alt"></i>
+                </div>
+                <div class="icon-pulse"></div>
+              </div>
+              <h3>Desbloqueio e Proteção</h3>
+              <div class="servico-details">
+                <p>
+                  Serviços de remoção de bloqueios e proteção avançada para seus
+                  dispositivos.
+                </p>
+                <ul class="servico-features">
+                  <li><i class="fas fa-check"></i> Desbloqueio de iCloud</li>
+                  <li><i class="fas fa-check"></i> Remoção de senhas</li>
+                  <li>
+                    <i class="fas fa-check"></i> Soluções para Find My iPhone
+                  </li>
+                  <li><i class="fas fa-check"></i> Proteção contra malware</li>
+                </ul>
+              </div>
+              <div class="servico-devices">
+                <span><i class="fas fa-mobile-alt"></i></span>
+                <span><i class="fas fa-laptop"></i></span>
+                <span><i class="fas fa-tablet-alt"></i></span>
+                <span><i class="fas fa-lock-open"></i></span>
+              </div>
+              <a
+                href="https://api.whatsapp.com/send?1=pt_BR&phone=5511987609959&text=Olá,%20gostaria%20de%20informações%20sobre%20desbloqueio"
+                class="servico-cta"
+              >
+                <span>Solicitar Serviço</span>
+                <i class="fas fa-arrow-right"></i>
+              </a>
             </div>
-            <h3>Desbloqueio e Proteção</h3>
-            <p>
-              Serviços de remoção de bloqueios e proteção avançada para seus
-              dispositivos.
-            </p>
-            <a
-              href="https://api.whatsapp.com/send?1=pt_BR&phone=5511987609959&text=Olá,%20gostaria%20de%20informações%20sobre%20desbloqueio"
-              class="servico-cta"
-              >Solicitar Serviço</a
-            >
+            <div class="card-bg"></div>
           </div>
         </div>
       </section>

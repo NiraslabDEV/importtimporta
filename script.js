@@ -452,3 +452,106 @@ function createParticles(container, count) {
     container.appendChild(particle);
   }
 }
+
+// Serviços Tab Functionality
+function initServicesTabsAndCards() {
+  const tabButtons = document.querySelectorAll(".tab-button");
+  const servicoCards = document.querySelectorAll(".servico-card");
+
+  // Definir o primeiro cartão como ativo por padrão
+  if (servicoCards.length > 0) {
+    servicoCards[0].classList.add("active");
+  }
+
+  tabButtons.forEach((button) => {
+    button.addEventListener("click", () => {
+      // Remover a classe ativa de todos os botões e adicionar ao clicado
+      tabButtons.forEach((b) => b.classList.remove("active"));
+      button.classList.add("active");
+
+      // Obter o serviço correspondente ao botão
+      const targetService = button.getAttribute("data-service");
+
+      // Remover a classe ativa de todos os cartões
+      servicoCards.forEach((card) => {
+        card.classList.remove("active");
+
+        // Verificar se o cartão corresponde ao serviço alvo
+        if (card.getAttribute("data-service") === targetService) {
+          // Adicionar classe com atraso para animação
+          setTimeout(() => {
+            card.classList.add("active");
+          }, 50);
+        }
+      });
+    });
+  });
+}
+
+// Adicionar interatividade aos cartões de serviço
+function enhanceServiceCards() {
+  const servicoCards = document.querySelectorAll(".servico-card");
+
+  servicoCards.forEach((card) => {
+    // Adicionar efeito de profundidade ao movimento do mouse
+    card.addEventListener("mousemove", (e) => {
+      const rect = card.getBoundingClientRect();
+      const x = (e.clientX - rect.left) / rect.width - 0.5;
+      const y = (e.clientY - rect.top) / rect.height - 0.5;
+
+      // Aplicar transformação de perspectiva
+      card.style.transform = `perspective(1000px) rotateY(${
+        x * 5
+      }deg) rotateX(${y * -5}deg) scale3d(1.02, 1.02, 1.02)`;
+
+      // Ajustar sombra baseado na posição
+      card.style.boxShadow = `0 15px 35px rgba(0,0,0,0.3), 
+                              ${x * 20}px ${y * 20}px 30px rgba(0,0,0,0.15)`;
+
+      // Efeito de luz de destaque
+      const cardBg = card.querySelector(".card-bg");
+      if (cardBg) {
+        cardBg.style.background = `radial-gradient(circle at ${
+          (x + 0.5) * 100
+        }% ${(y + 0.5) * 100}%, 
+                                   rgba(var(--accent-rgb), 0.15), 
+                                   rgba(var(--accent-rgb), 0.05) 40%, 
+                                   transparent 60%)`;
+      }
+    });
+
+    // Resetar efeitos quando o mouse sair
+    card.addEventListener("mouseleave", () => {
+      card.style.transform = "";
+      card.style.boxShadow = "";
+
+      const cardBg = card.querySelector(".card-bg");
+      if (cardBg) {
+        cardBg.style.background = "";
+      }
+    });
+
+    // Adicionar classe para animação ao clicar
+    card.addEventListener("click", function () {
+      this.classList.add("pulse-effect");
+      setTimeout(() => {
+        this.classList.remove("pulse-effect");
+      }, 300);
+    });
+  });
+}
+
+// Inicializar todas as funcionalidades quando o DOM estiver pronto
+document.addEventListener("DOMContentLoaded", function () {
+  // Inicializar funcionalidades existentes
+  if (typeof initThemeToggle === "function") initThemeToggle();
+  if (typeof initMobileMenu === "function") initMobileMenu();
+  if (typeof initScrollEvents === "function") initScrollEvents();
+  if (typeof initProductFilter === "function") initProductFilter();
+  if (typeof initParallaxEffect === "function") initParallaxEffect();
+  if (typeof initScrollAnimation === "function") initScrollAnimation();
+
+  // Inicializar novas funcionalidades da seção de serviços
+  initServicesTabsAndCards();
+  enhanceServiceCards();
+});
