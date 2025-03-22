@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>De La Casa Apple Store</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;800&family=Orbitron:wght@400;600;800&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="dark-theme">
+    <div class="theme-toggle">
+      <i class="fas fa-sun"></i>
+      <i class="fas fa-moon active"></i>
+    </div>
+
+    <div class="noise-overlay"></div>
+    <div class="grid-overlay"></div>
+
+    <header>
+      <div class="logo">
+        <span class="logo-text">DELACASA</span>
+        <span class="logo-highlight">APPLE STORE</span>
+      </div>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="#inicio" class="active">Início</a></li>
+          <li><a href="#sobre">Sobre</a></li>
+          <li><a href="#servicos">Serviços</a></li>
+          <li><a href="#produtos">Produtos</a></li>
+          <li><a href="#nossos-valores">Nossos Valores</a></li>
+          <li><a href="#localizacao">Localização</a></li>
+        </ul>
+        <div class="mobile-menu-toggle">
+          <i class="fas fa-bars"></i>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <!-- Hero Section com vídeo -->
+      <section id="inicio" class="hero">
+        <div class="hero-content">
+          <h1 class="glitch-effect" data-text="DELACASA APPLE STORE">
+            DELACASA APPLE STORE
+          </h1>
+          <p class="subtitle">Revenda e Assistência Técnica Apple</p>
+          <div class="hero-cta">
+            <a
+              href="https://api.whatsapp.com/send?1=pt_BR&phone=5511987609959"
+              class="cta-button"
+            >
+              <i class="fab fa-whatsapp"></i> Entre em contato
+            </a>
+          </div>
+        </div>
+        <div class="hero-video-container">
+          <div class="hero-logo">
+            <img src="logo apple.png" alt="Apple Logo" class="apple-logo" />
+          </div>
+        </div>
+        <div class="scroll-indicator">
+          <span>Scroll</span>
+          <i class="fas fa-angle-down"></i>
+        </div>
+      </section>
+
+      <!-- Sobre Section -->
+      <section id="sobre" class="sobre">
+        <div class="particles-container"></div>
+        <div class="section-header">
+          <h2 class="glitch-effect" data-text="SOBRE NÓS">SOBRE NÓS</h2>
+          <div class="section-line"></div>
+        </div>
+        <div class="sobre-content">
+          <div class="sobre-image">
+            <div class="image-frame">
+              <img src="logo2.png" alt="Loja Apple" />
+            </div>
+          </div>
+          <div class="sobre-text">
+            <p>
+              A <span class="highlight">De La Casa Apple Store</span> é uma loja
+              especializada na revenda de produtos Apple e serviços de
+              assistência técnica de alta qualidade.
+            </p>
+            <p>
+              Oferecemos produtos originais com garantia e suporte técnico
+              especializado para reparos em iPhones, MacBooks, iPads e outros
+              dispositivos Apple.
+            </p>
+            <p>
+              Nossa equipe é formada por profissionais certificados e
+              apaixonados pela tecnologia Apple.
+            </p>
+            <div class="sobre-features">
+              <div class="feature">
+                <i class="fas fa-check-circle"></i>
+                <span>Produtos originais</span>
+              </div>
+              <div class="feature">
+                <i class="fas fa-check-circle"></i>
+                <span>Garantia em todos os produtos</span>
+              </div>
+              <div class="feature">
+                <i class="fas fa-check-circle"></i>
+                <span>Técnicos especializados</span>
+              </div>
+              <div class="feature">
+                <i class="fas fa-check-circle"></i>
+                <span>Atendimento personalizado</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Serviços Section -->
+      <section id="servicos" class="servicos">
+        <div class="section-header">
+          <h2 class="glitch-effect" data-text="SERVIÇOS">SERVIÇOS</h2>
+          <div class="section-line"></div>
+        </div>
+        <div class="servicos-container">
+          <div class="servico-card">
+            <div class="servico-icon">
+              <i class="fas fa-tools"></i>
+            </div>
+            <h3>Assistência Técnica</h3>
+            <p>
+              Reparos especializados em todos os dispositivos Apple: iPhones,
+              MacBooks, iPads e Apple Watch.
+            </p>
+            <a
+              href="https://api.whatsapp.com/send?1=pt_BR&phone=5511987609959&text=Olá,%20gostaria%20de%20informações%20sobre%20assistência%20técnica"
+              class="servico-cta"
+              >Solicitar Reparo</a
+            >
+          </div>
+          <div class="servico-card">
+            <div class="servico-icon">
+              <i class="fas fa-exchange-alt"></i>
+            </div>
+            <h3>Transferência de Dados</h3>
+            <p>
+              Transferimos seus dados de forma segura entre dispositivos,
+              garantindo que nenhuma informação se perca.
+            </p>
+            <a
+              href="https://api.whatsapp.com/send?1=pt_BR&phone=5511987609959&text=Olá,%20gostaria%20de%20informações%20sobre%20transferência%20de%20dados"
+              class="servico-cta"
+              >Solicitar Serviço</a
+            >
+          </div>
+          <div class="servico-card">
+            <div class="servico-icon">
+              <i class="fas fa-mobile-alt"></i>
+            </div>
+            <h3>Compra de Usados</h3>
+            <p>
+              Compramos seu dispositivo Apple usado por um preço justo. Faça uma
+              avaliação gratuita.
+            </p>
+            <a
+              href="https://api.whatsapp.com/send?1=pt_BR&phone=5511987609959&text=Olá,%20gostaria%20de%20vender%20meu%20dispositivo%20Apple"
+              class="servico-cta"
+              >Vender Dispositivo</a
+            >
+          </div>
+          <div class="servico-card">
+            <div class="servico-icon">
+              <i class="fas fa-shield-alt"></i>
+            </div>
+            <h3>Desbloqueio e Proteção</h3>
+            <p>
+              Serviços de remoção de bloqueios e proteção avançada para seus
+              dispositivos.
+            </p>
+            <a
+              href="https://api.whatsapp.com/send?1=pt_BR&phone=5511987609959&text=Olá,%20gostaria%20de%20informações%20sobre%20desbloqueio"
+              class="servico-cta"
+              >Solicitar Serviço</a
+            >
+          </div>
+        </div>
+      </section>
+
+      <!-- Produtos Section -->
+      <section id="produtos" class="produtos">
+        <div class="section-header">
+          <h2 class="glitch-effect" data-text="PRODUTOS">PRODUTOS</h2>
+          <div class="section-line"></div>
+        </div>
+        <div class="produtos-filter">
+          <button class="filter-btn active" data-filter="todos">Todos</button>
+          <button class="filter-btn" data-filter="iphone">iPhone</button>
+          <button class="filter-btn" data-filter="macbook">MacBook</button>
+          <button class="filter-btn" data-filter="ipad">iPad</button>
+          <button class="filter-btn" data-filter="acessorios">
+            Acessórios
+          </button>
+        </div>
+        <div class="produtos-container">
+          <!-- iPhone -->
+          <div class="produto-card" data-category="iphone">
+            <div class="produto-badge">Novo</div>
+            <div class="produto-image">
+              <img
+                src="https://images.unsplash.com/photo-1592899677977-9c10ca588bbd?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=800&ixid=MnwxfDB8MXxyYW5kb218MHx8aXBob25lIDE1fHx8fHx8MTYxNjI2NDYyMA&ixlib=rb-1.2.1&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=800"
+                alt="iPhone 15 Pro"
+              />
+            </div>
+            <div class="produto-info">
+              <h3>iPhone 15 Pro</h3>
+              <p class="produto-desc">128GB, Titânio, Novo Lacrado</p>
+              <div class="produto-price">R$ 9.899,00</div>
+              <p class="produto-parcela">ou 21x de R$ 471,38</p>
+              <a
+                href="https://api.whatsapp.com/send?1=pt_BR&phone=5511987609959&text=Olá,%20tenho%20interesse%20no%20iPhone%2015%20Pro%20de%20R$%209.899,00"
+                class="produto-cta"
+              >
+                <i class="fab fa-whatsapp"></i> Comprar agora
+              </a>
+            </div>
+          </div>
+
+          <!-- MacBook -->
+          <div class="produto-card" data-category="macbook">
+            <div class="produto-image">
+              <img
+                src="https://images.unsplash.com/photo-1517336714731-489689fd1ca4?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=800&ixid=MnwxfDB8MXxyYW5kb218MHx8bWFjYm9vayBwcm98fHx8fHwxNjE2MjY0NjIw&ixlib=rb-1.2.1&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=800"
+                alt="MacBook Pro"
+              />
+            </div>
+            <div class="produto-info">
+              <h3>MacBook Pro M2</h3>
+              <p class="produto-desc">14", 16GB RAM, 512GB SSD</p>
+              <div class="produto-price">R$ 17.999,00</div>
+              <p class="produto-parcela">ou 21x de R$ 857,10</p>
+              <a
+                href="https://api.whatsapp.com/send?1=pt_BR&phone=5511987609959&text=Olá,%20tenho%20interesse%20no%20MacBook%20Pro%20M2%20de%20R$%2017.999,00"
+                class="produto-cta"
+              >
+                <i class="fab fa-whatsapp"></i> Comprar agora
+              </a>
+            </div>
+          </div>
+
+          <!-- iPad -->
+          <div class="produto-card" data-category="ipad">
+            <div class="produto-badge">Promoção</div>
+            <div class="produto-image">
+              <img
+                src="https://images.unsplash.com/photo-1544244015-0df4b3ffc6b0?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=800&ixid=MnwxfDB8MXxyYW5kb218MHx8aXBhZCBwcm98fHx8fHwxNjE2MjY0NjIw&ixlib=rb-1.2.1&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=800"
+                alt="iPad Pro"
+              />
+            </div>
+            <div class="produto-info">
+              <h3>iPad Pro 11"</h3>
+              <p class="produto-desc">M2, 256GB, Wi-Fi</p>
+              <div class="produto-price">R$ 8.499,00</div>
+              <p class="produto-parcela">ou 21x de R$ 404,71</p>
+              <a
+                href="https://api.whatsapp.com/send?1=pt_BR&phone=5511987609959&text=Olá,%20tenho%20interesse%20no%20iPad%20Pro%2011%20de%20R$%208.499,00"
+                class="produto-cta"
+              >
+                <i class="fab fa-whatsapp"></i> Comprar agora
+              </a>
+            </div>
+          </div>
+
+          <!-- Acessórios -->
+          <div class="produto-card" data-category="acessorios">
+            <div class="produto-image">
+              <img
+                src="https://images.unsplash.com/photo-1600294037681-c80b4cb5b434?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=800&ixid=MnwxfDB8MXxyYW5kb218MHx8YWlycG9kcyBwcm98fHx8fHwxNjE2MjY0NjIw&ixlib=rb-1.2.1&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=800"
+                alt="AirPods Pro"
+              />
+            </div>
+            <div class="produto-info">
+              <h3>AirPods Pro 2</h3>
+              <p class="produto-desc">Com cancelamento de ruído</p>
+              <div class="produto-price">R$ 2.199,00</div>
+              <p class="produto-parcela">ou 21x de R$ 104,71</p>
+              <a
+                href="https://api.whatsapp.com/send?1=pt_BR&phone=5511987609959&text=Olá,%20tenho%20interesse%20nos%20AirPods%20Pro%202%20de%20R$%202.199,00"
+                class="produto-cta"
+              >
+                <i class="fab fa-whatsapp"></i> Comprar agora
+              </a>
+            </div>
+          </div>
+
+          <!-- Mais produtos podem ser adicionados aqui -->
+        </div>
+        <div class="produtos-ver-mais">
+          <a
+            href="https://api.whatsapp.com/send?1=pt_BR&phone=5511987609959&text=Olá,%20gostaria%20de%20ver%20mais%20produtos%20disponíveis"
+            class="cta-button"
+          >
+            <i class="fab fa-whatsapp"></i> Ver mais produtos
+          </a>
+        </div>
+      </section>
+
+      <!-- Nossos Valores Section -->
+      <section id="nossos-valores" class="nossos-valores">
+        <div class="section-header">
+          <h2 class="glitch-effect" data-text="NOSSOS VALORES">
+            NOSSOS VALORES
+          </h2>
+          <div class="section-line"></div>
+        </div>
+        <div class="nossos-valores-container">
+          <div class="nossos-valores-content">
+            <div class="nossos-valores-text">
+              <p class="nossos-valores-highlight">
+                Somos apaixonados por inovação e tecnologia.
+              </p>
+              <p>
+                Na De La Casa Apple Store, acreditamos que a tecnologia deve ser
+                acessível a todos, funcionando perfeitamente para enriquecer sua
+                vida digital.
+              </p>
+              <p>
+                Nosso compromisso vai além da venda - buscamos criar uma
+                experiência única, com atendimento personalizado e soluções que
+                realmente atendam às suas necessidades.
+              </p>
+              <p>
+                Trabalhamos com os mais altos padrões de qualidade e
+                integridade, garantindo que cada produto e serviço entregue seja
+                digno da confiança que você deposita em nós.
+              </p>
+            </div>
+            <div class="nossos-valores-video">
+              <!-- Camada de proteção para evitar interações indesejadas -->
+              <div class="video-overlay"></div>
+
+              <iframe
+                src="https://assets.pinterest.com/ext/embed.html?id=163044449005815929&play=autoplay&loop=1&controls=0"
+                scrolling="no"
+                frameborder="0"
+                allowfullscreen
+                allow="autoplay; encrypted-media"
+                class="pinterest-video-autoplay"
+                title="Vídeo da Apple"
+              ></iframe>
+            </div>
+          </div>
+          <div class="valores-container">
+            <div class="valor-card">
+              <div class="valor-icon">
+                <i class="fas fa-gem"></i>
+              </div>
+              <h3>Qualidade</h3>
+              <p>Compromisso com produtos e serviços de excelência.</p>
+            </div>
+            <div class="valor-card">
+              <div class="valor-icon">
+                <i class="fas fa-handshake"></i>
+              </div>
+              <h3>Confiança</h3>
+              <p>Relações transparentes e genuínas com nossos clientes.</p>
+            </div>
+            <div class="valor-card">
+              <div class="valor-icon">
+                <i class="fas fa-lightbulb"></i>
+              </div>
+              <h3>Inovação</h3>
+              <p>Sempre em busca das melhores soluções tecnológicas.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Localização Section -->
+      <section id="localizacao" class="localizacao">
+        <div class="section-header">
+          <h2 class="glitch-effect" data-text="LOCALIZAÇÃO">LOCALIZAÇÃO</h2>
+          <div class="section-line"></div>
+        </div>
+        <div class="localizacao-container">
+          <div class="localizacao-info">
+            <div class="localizacao-card">
+              <div class="info-item">
+                <i class="fas fa-map-marker-alt"></i>
+                <div>
+                  <h3>Endereço</h3>
+                  <p>Rua Columbia, 582 - Santo André, SP</p>
+                </div>
+              </div>
+              <div class="info-item">
+                <i class="fas fa-clock"></i>
+                <div>
+                  <h3>Horário de Funcionamento</h3>
+                  <p>Segunda a Sexta: 9h às 18h</p>
+                  <p>Sábado: 10h às 14h</p>
+                </div>
+              </div>
+              <div class="info-item">
+                <i class="fas fa-phone-alt"></i>
+                <div>
+                  <h3>Contato</h3>
+                  <p>WhatsApp: (11) 98760-9959</p>
+                </div>
+              </div>
+              <a
+                href="https://api.whatsapp.com/send?1=pt_BR&phone=5511987609959&text=Olá,%20gostaria%20de%20agendar%20uma%20visita%20à%20loja"
+                class="cta-button localizacao-cta"
+              >
+                <i class="fab fa-whatsapp"></i> Agendar visita
+              </a>
+            </div>
+          </div>
+          <div class="mapa-container">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3654.4127772446316!2d-46.5444307!3d-23.6580977!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce43a2a7d6fc0d%3A0x63ac9d4f0f6f59c6!2sRua%20Columbia%2C%20582%20-%20Parque%20das%20Na%C3%A7%C3%B5es%2C%20Santo%20Andr%C3%A9%20-%20SP%2C%2009280-680!5e0!3m2!1spt-BR!2sbr!4v1617010000000!5m2!1spt-BR!2sbr"
+              width="100%"
+              height="100%"
+              style="border: 0"
+              allowfullscreen=""
+              loading="lazy"
+            ></iframe>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="footer-content">
+        <div class="footer-logo">
+          <span class="logo-text">DELACASA</span>
+          <span class="logo-highlight">APPLE STORE</span>
+        </div>
+        <div class="footer-links">
+          <div class="footer-section">
+            <h3>Menu</h3>
+            <ul>
+              <li><a href="#inicio">Início</a></li>
+              <li><a href="#sobre">Sobre</a></li>
+              <li><a href="#servicos">Serviços</a></li>
+              <li><a href="#produtos">Produtos</a></li>
+              <li><a href="#nossos-valores">Nossos Valores</a></li>
+              <li><a href="#localizacao">Localização</a></li>
+            </ul>
+          </div>
+          <div class="footer-section">
+            <h3>Serviços</h3>
+            <ul>
+              <li><a href="#servicos">Assistência Técnica</a></li>
+              <li><a href="#servicos">Transferência de Dados</a></li>
+              <li><a href="#servicos">Compra de Usados</a></li>
+              <li><a href="#servicos">Desbloqueio</a></li>
+            </ul>
+          </div>
+          <div class="footer-section">
+            <h3>Contato</h3>
+            <ul>
+              <li>
+                <i class="fas fa-map-marker-alt"></i> Rua Columbia, 582 - Santo
+                André
+              </li>
+              <li><i class="fab fa-whatsapp"></i> (11) 98760-9959</li>
+              <li>
+                <i class="far fa-envelope"></i> contato@delacasaapple.com.br
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer-social">
+          <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+          <a href="#" class="social-icon"><i class="fab fa-facebook"></i></a>
+          <a href="#" class="social-icon"><i class="fab fa-tiktok"></i></a>
+          <a
+            href="https://api.whatsapp.com/send?1=pt_BR&phone=5511987609959"
+            class="social-icon"
+            ><i class="fab fa-whatsapp"></i
+          ></a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2024 De La Casa Apple Store. Todos os direitos reservados.</p>
+        <p class="disclaimer">
+          Apple, iPhone, MacBook, iPad e outros são marcas registradas da Apple
+          Inc.
+        </p>
+      </div>
+    </footer>
+
+    <div class="whatsapp-float">
+      <a href="https://api.whatsapp.com/send?1=pt_BR&phone=5511987609959">
+        <i class="fab fa-whatsapp"></i>
+      </a>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
