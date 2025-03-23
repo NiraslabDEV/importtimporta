@@ -40,20 +40,35 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   // Menu mobile
-  mobileMenuToggle.addEventListener("click", function () {
+  mobileMenuToggle.addEventListener("click", function (e) {
+    e.stopPropagation(); // Impedir que o clique propague para o documento
     navLinks.classList.toggle("active");
     mobileMenuToggle.querySelector("i").classList.toggle("fa-bars");
     mobileMenuToggle.querySelector("i").classList.toggle("fa-times");
+  });
+
+  // Impedir que cliques dentro do menu fechem o menu
+  navLinks.addEventListener("click", function (e) {
+    e.stopPropagation();
+  });
+
+  // Fechar menu ao clicar em qualquer lugar fora do menu
+  document.addEventListener("click", function () {
+    if (navLinks.classList.contains("active")) {
+      navLinks.classList.remove("active");
+      if (mobileMenuToggle.querySelector("i").classList.contains("fa-times")) {
+        mobileMenuToggle.querySelector("i").classList.remove("fa-times");
+        mobileMenuToggle.querySelector("i").classList.add("fa-bars");
+      }
+    }
   });
 
   // Fechar menu ao clicar em um link
   navItems.forEach((item) => {
     item.addEventListener("click", function () {
       navLinks.classList.remove("active");
-      if (mobileMenuToggle.querySelector("i").classList.contains("fa-times")) {
-        mobileMenuToggle.querySelector("i").classList.remove("fa-times");
-        mobileMenuToggle.querySelector("i").classList.add("fa-bars");
-      }
+      mobileMenuToggle.querySelector("i").classList.add("fa-bars");
+      mobileMenuToggle.querySelector("i").classList.remove("fa-times");
     });
   });
 
