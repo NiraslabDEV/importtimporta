@@ -1,6 +1,6 @@
-# De La Casa Apple Store
+# IMPORTT IMPORTA
 
-Site institucional para a loja De La Casa Apple Store, especializada em produtos e serviços Apple.
+Site institucional para a loja IMPORTT IMPORTA, especializada em produtos e serviços Apple.
 
 ## Características
 
@@ -10,6 +10,7 @@ Site institucional para a loja De La Casa Apple Store, especializada em produtos
 - Animações e efeitos visuais criados com CSS e JavaScript
 - Seções para apresentação de produtos, serviços e valores da empresa
 - Integração com WhatsApp para contato e vendas
+- Loja 100% online com foco em delivery para todo o Brasil
 
 ## Tecnologias Utilizadas
 
@@ -26,7 +27,7 @@ Site institucional para a loja De La Casa Apple Store, especializada em produtos
 - **Serviços:** Detalhes dos serviços oferecidos
 - **Produtos:** Mostruário dos produtos disponíveis
 - **Nossos Valores:** Filosofia e valores da empresa
-- **Localização:** Informações de contato e endereço físico
+- **Contato:** Informações de contato e canais de atendimento online
 
 ## Como Usar
 
@@ -36,4 +37,4 @@ Site institucional para a loja De La Casa Apple Store, especializada em produtos
 
 ## Licença
 
-Todos os direitos reservados © 2024 De La Casa Apple Store
+Todos os direitos reservados © 2024 IMPORTT IMPORTA
