@@ -2695,6 +2695,13 @@ video.error .fallback-image {
 @media (max-width: 768px) {
   .hero-video-container video,
   .nossos-valores-video video {
-    object-fit: contain;
+    object-fit: cover; /* Alterado de 'contain' para 'cover' para preencher toda a hero */
+  }
+
+  /* Garantindo que o container do vídeo tenha altura adequada em dispositivos móveis */
+  .hero-video-container,
+  .nossos-valores-video {
+    height: 100%;
+    overflow: hidden;
   }
 }
