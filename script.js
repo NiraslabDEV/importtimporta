@@ -541,17 +541,54 @@ function enhanceServiceCards() {
   });
 }
 
-// Inicializar todas as funcionalidades quando o DOM estiver pronto
-document.addEventListener("DOMContentLoaded", function () {
-  // Inicializar funcionalidades existentes
-  if (typeof initThemeToggle === "function") initThemeToggle();
-  if (typeof initMobileMenu === "function") initMobileMenu();
-  if (typeof initScrollEvents === "function") initScrollEvents();
-  if (typeof initProductFilter === "function") initProductFilter();
-  if (typeof initParallaxEffect === "function") initParallaxEffect();
-  if (typeof initScrollAnimation === "function") initScrollAnimation();
+// Função para garantir que o site não tenha rolagem horizontal em dispositivos móveis
+function preventHorizontalScroll() {
+  document.body.addEventListener(
+    "touchmove",
+    function (e) {
+      // Verifica se o usuário está tentando rolar horizontalmente
+      if (
+        !document.body.contains(e.target) ||
+        window.innerWidth <= e.touches[0].clientX ||
+        e.touches[0].clientX <= 0
+      ) {
+        e.preventDefault();
+      }
+    },
+    { passive: false }
+  );
 
-  // Inicializar novas funcionalidades da seção de serviços
+  // Ajusta qualquer overflow que possa estar causando problemas
+  const resizeHandler = () => {
+    if (window.innerWidth <= 768) {
+      // Elementos que podem estar causando overflow
+      const fullWidthElements = document.querySelectorAll(
+        "section, .servicos-container, .hero, .footer"
+      );
+      fullWidthElements.forEach((el) => {
+        if (el.offsetWidth > window.innerWidth) {
+          el.style.width = "100%";
+          el.style.maxWidth = "100vw";
+          el.style.overflowX = "hidden";
+        }
+      });
+    }
+  };
+
+  // Executar no carregamento e no redimensionamento
+  window.addEventListener("resize", resizeHandler);
+  resizeHandler();
+}
+
+// Executa todas as funções quando o DOM estiver carregado
+document.addEventListener("DOMContentLoaded", function () {
+  toggleTheme();
+  toggleMobileMenu();
+  initParallaxEffect();
+  setupParticleAnimation();
+  setupSobreAnimation();
+  setupProductsFilter();
   initServicesTabsAndCards();
   enhanceServiceCards();
+  preventHorizontalScroll(); // Nova função para prevenir rolagem horizontal
 });
