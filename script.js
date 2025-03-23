@@ -358,6 +358,40 @@ document.head.insertAdjacentHTML(
 
 // Adicionar classe 'animate-on-scroll' a elementos que devem animar ao rolar
 document.addEventListener("DOMContentLoaded", function () {
+  console.log("DOM completamente carregado e analisado");
+
+  // Inicializar funcionalidades existentes
+  if (typeof initThemeToggle === "function") {
+    console.log("Inicializando toggle de tema");
+    initThemeToggle();
+  }
+  if (typeof initMobileMenu === "function") {
+    console.log("Inicializando menu mobile");
+    initMobileMenu();
+  }
+  if (typeof initScrollEvents === "function") {
+    console.log("Inicializando eventos de scroll");
+    initScrollEvents();
+  }
+  if (typeof initProductFilter === "function") {
+    console.log("Inicializando filtros de produtos");
+    initProductFilter();
+  }
+  if (typeof initParallaxEffect === "function") {
+    console.log("Inicializando efeito parallax");
+    initParallaxEffect();
+  }
+  if (typeof initScrollAnimation === "function") {
+    console.log("Inicializando animações de scroll");
+    initScrollAnimation();
+  }
+
+  // Inicializar novas funcionalidades da seção de serviços
+  console.log("Preparando para inicializar funcionalidades de serviços");
+  initServicesTabsAndCards();
+  enhanceServiceCards();
+  console.log("Inicialização concluída");
+
   // Adicionar animação à seção sobre
   const sobreImage = document.querySelector(".sobre-image");
   const sobreFeatures = document.querySelectorAll(".feature");
@@ -409,88 +443,15 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 });
 
-// Função para criar partículas
-function createParticles(container, count) {
-  for (let i = 0; i < count; i++) {
-    const particle = document.createElement("span");
-    particle.classList.add("particle");
-
-    // Tamanho aleatório entre 2px e 12px
-    const size = Math.random() * 10 + 2;
-    particle.style.width = `${size}px`;
-    particle.style.height = `${size}px`;
-
-    // Posição inicial aleatória na base da tela
-    const posX = Math.random() * 100;
-    particle.style.left = `${posX}%`;
-    particle.style.bottom = `0`;
-
-    // Offset X aleatório para movimento
-    const offsetX = (Math.random() - 0.5) * 40;
-    particle.style.setProperty("--offset-x", `${offsetX}%`);
-
-    // Posição X final aleatória
-    const finalX = offsetX + (Math.random() - 0.5) * 30;
-    particle.style.setProperty("--final-x", `${finalX}%`);
-
-    // Escala aleatória
-    const scale = Math.random() * 0.6 + 0.2;
-    particle.style.setProperty("--scale", scale.toString());
-
-    // Opacidade aleatória
-    const opacity = Math.random() * 0.5 + 0.1;
-    particle.style.setProperty("--opacity", opacity.toString());
-
-    // Duração aleatória para cada partícula
-    const duration = Math.random() * 15 + 15;
-    particle.style.setProperty("--duration", `${duration}s`);
-
-    // Atraso aleatório para cada partícula
-    const delay = Math.random() * 20;
-    particle.style.setProperty("--delay", `${delay}s`);
-
-    container.appendChild(particle);
-  }
-}
-
-// Serviços Tab Functionality
-function initServicesTabsAndCards() {
-  const tabButtons = document.querySelectorAll(".tab-button");
-  const servicoCards = document.querySelectorAll(".servico-card");
-
-  // Definir o primeiro cartão como ativo por padrão
-  if (servicoCards.length > 0) {
-    servicoCards[0].classList.add("active");
-  }
-
-  tabButtons.forEach((button) => {
-    button.addEventListener("click", () => {
-      // Remover a classe ativa de todos os botões e adicionar ao clicado
-      tabButtons.forEach((b) => b.classList.remove("active"));
-      button.classList.add("active");
-
-      // Obter o serviço correspondente ao botão
-      const targetService = button.getAttribute("data-service");
-
-      // Remover a classe ativa de todos os cartões
-      servicoCards.forEach((card) => {
-        card.classList.remove("active");
-
-        // Verificar se o cartão corresponde ao serviço alvo
-        if (card.getAttribute("data-service") === targetService) {
-          // Adicionar classe com atraso para animação
-          setTimeout(() => {
-            card.classList.add("active");
-          }, 50);
-        }
-      });
-    });
-  });
-}
-
 // Adicionar interatividade aos cartões de serviço
 function enhanceServiceCards() {
   const servicoCards = document.querySelectorAll(".servico-card");
+
+  console.log(
+    "Melhorando interatividade para",
+    servicoCards.length,
+    "cartões de serviço"
+  );
 
   servicoCards.forEach((card) => {
     // Adicionar efeito de profundidade ao movimento do mouse
@@ -541,54 +502,164 @@ function enhanceServiceCards() {
   });
 }
 
-// Função para garantir que o site não tenha rolagem horizontal em dispositivos móveis
-function preventHorizontalScroll() {
-  document.body.addEventListener(
-    "touchmove",
-    function (e) {
-      // Verifica se o usuário está tentando rolar horizontalmente
-      if (
-        !document.body.contains(e.target) ||
-        window.innerWidth <= e.touches[0].clientX ||
-        e.touches[0].clientX <= 0
-      ) {
-        e.preventDefault();
-      }
-    },
-    { passive: false }
-  );
+// Função para criar partículas
+function createParticles(container, count) {
+  for (let i = 0; i < count; i++) {
+    const particle = document.createElement("span");
+    particle.classList.add("particle");
 
-  // Ajusta qualquer overflow que possa estar causando problemas
-  const resizeHandler = () => {
-    if (window.innerWidth <= 768) {
-      // Elementos que podem estar causando overflow
-      const fullWidthElements = document.querySelectorAll(
-        "section, .servicos-container, .hero, .footer"
-      );
-      fullWidthElements.forEach((el) => {
-        if (el.offsetWidth > window.innerWidth) {
-          el.style.width = "100%";
-          el.style.maxWidth = "100vw";
-          el.style.overflowX = "hidden";
-        }
-      });
-    }
-  };
+    // Tamanho aleatório entre 2px e 12px
+    const size = Math.random() * 10 + 2;
+    particle.style.width = `${size}px`;
+    particle.style.height = `${size}px`;
 
-  // Executar no carregamento e no redimensionamento
-  window.addEventListener("resize", resizeHandler);
-  resizeHandler();
+    // Posição inicial aleatória na base da tela
+    const posX = Math.random() * 100;
+    particle.style.left = `${posX}%`;
+    particle.style.bottom = `0`;
+
+    // Offset X aleatório para movimento
+    const offsetX = (Math.random() - 0.5) * 40;
+    particle.style.setProperty("--offset-x", `${offsetX}%`);
+
+    // Posição X final aleatória
+    const finalX = offsetX + (Math.random() - 0.5) * 30;
+    particle.style.setProperty("--final-x", `${finalX}%`);
+
+    // Escala aleatória
+    const scale = Math.random() * 0.6 + 0.2;
+    particle.style.setProperty("--scale", scale.toString());
+
+    // Opacidade aleatória
+    const opacity = Math.random() * 0.5 + 0.1;
+    particle.style.setProperty("--opacity", opacity.toString());
+
+    // Duração aleatória para cada partícula
+    const duration = Math.random() * 15 + 15;
+    particle.style.setProperty("--duration", `${duration}s`);
+
+    // Atraso aleatório para cada partícula
+    const delay = Math.random() * 20;
+    particle.style.setProperty("--delay", `${delay}s`);
+
+    container.appendChild(particle);
+  }
 }
 
-// Executa todas as funções quando o DOM estiver carregado
-document.addEventListener("DOMContentLoaded", function () {
-  toggleTheme();
-  toggleMobileMenu();
-  initParallaxEffect();
-  setupParticleAnimation();
-  setupSobreAnimation();
-  setupProductsFilter();
+// Função para reinicializar a funcionalidade das abas de serviços
+function reinitServicesTabsAndCards() {
+  console.log("Reinicializando funcionalidade de serviços");
+
+  // Remover todos os event listeners anteriores clonando e substituindo os elementos
+  const tabButtons = document.querySelectorAll(".tab-button");
+  const servicoCards = document.querySelectorAll(".servico-card");
+
+  console.log("Reconfigurando botões e cartões");
+
+  // Remover todos os event listeners clonando os elementos
+  tabButtons.forEach((button) => {
+    const clone = button.cloneNode(true);
+    button.parentNode.replaceChild(clone, button);
+  });
+
+  // Inicializar novamente a funcionalidade com os novos elementos clonados
   initServicesTabsAndCards();
+
+  // Adicionar as funcionalidades de interatividade aos cartões
   enhanceServiceCards();
-  preventHorizontalScroll(); // Nova função para prevenir rolagem horizontal
+}
+
+// Serviços Tab Functionality
+function initServicesTabsAndCards() {
+  console.log("Inicializando tabs e cards de serviços");
+  const tabButtons = document.querySelectorAll(".tab-button");
+  const servicoCards = document.querySelectorAll(".servico-card");
+
+  console.log("Botões de tabs encontrados:", tabButtons.length);
+  console.log("Cards de serviço encontrados:", servicoCards.length);
+
+  // Definir o primeiro cartão como ativo por padrão
+  if (servicoCards.length > 0) {
+    servicoCards[0].classList.add("active");
+  }
+
+  tabButtons.forEach((button, index) => {
+    console.log(
+      `Configurando botão ${index} para o serviço: ${button.getAttribute(
+        "data-service"
+      )}`
+    );
+
+    button.addEventListener("click", function (e) {
+      e.preventDefault(); // Prevenir comportamento padrão
+      e.stopPropagation(); // Parar propagação do evento
+
+      console.log(`Clique no botão: ${this.getAttribute("data-service")}`);
+
+      // Remover a classe ativa de todos os botões e adicionar ao clicado
+      tabButtons.forEach((b) => b.classList.remove("active"));
+      this.classList.add("active");
+
+      // Obter o serviço correspondente ao botão
+      const targetService = this.getAttribute("data-service");
+      console.log(`Serviço alvo: ${targetService}`);
+
+      // Remover a classe ativa de todos os cartões
+      servicoCards.forEach((card) => {
+        card.classList.remove("active");
+
+        // Verificar se o cartão corresponde ao serviço alvo
+        if (card.getAttribute("data-service") === targetService) {
+          console.log(`Ativando card para: ${targetService}`);
+          // Adicionar classe com atraso para animação
+          setTimeout(() => {
+            card.classList.add("active");
+          }, 50);
+        }
+      });
+
+      return false; // Retornar falso para garantir que o evento não se propague
+    });
+  });
+}
+
+// Adicionar listener para o evento de redimensionamento da janela
+window.addEventListener("resize", function () {
+  // Reinicializar a funcionalidade após o redimensionamento
+  if (window.innerWidth <= 768) {
+    // Apenas para dispositivos móveis
+    reinitServicesTabsAndCards();
+  }
+});
+
+// Adicionar tratamento especial para toque em dispositivos móveis
+document.addEventListener("DOMContentLoaded", function () {
+  // Detectar se é um dispositivo móvel
+  const isMobile =
+    window.innerWidth <= 768 ||
+    navigator.userAgent.match(/Android/i) ||
+    navigator.userAgent.match(/iPhone|iPad|iPod/i);
+
+  if (isMobile) {
+    console.log(
+      "Dispositivo móvel detectado - aplicando tratamento especial para toque"
+    );
+
+    // Adicionar listeners de toque para as abas
+    const tabButtons = document.querySelectorAll(".tab-button");
+    tabButtons.forEach((button) => {
+      button.addEventListener(
+        "touchstart",
+        function (e) {
+          e.preventDefault();
+          console.log(
+            "Toque detectado no botão:",
+            this.getAttribute("data-service")
+          );
+          this.click(); // Acionar o evento de clique
+        },
+        { passive: false }
+      );
+    });
+  }
 });
